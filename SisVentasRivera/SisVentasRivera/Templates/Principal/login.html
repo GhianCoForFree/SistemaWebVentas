@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load staticfiles %}
+{% block title %}Acceso al Sistema{% endblock %}
+{% block head %}
+<style type="text/css">
+	body{
+		text-align: center;
+	}
+</style>
+{% endblock %}
+{% block body %}
+	<section class="container">
+		<section class="row">
+			<section class="col-xs-12">
+				<section id="header">
+					<span id="titulo_cabecera">Libreria Rivera S.R.L</span>
+				</section>
+				<section class="formulario"><br><br><br>
+					<section class="col-xs-6">
+						<img src="{% static "img/login-img.png" %}" alt="UserAccess">
+						<h2 class="h22">Ingresa tus datos</h2>
+					</section>
+					<section class="col-xs-6">
+						<form action="/panel/admin" id="formu" method="POST">
+							<section class="col-xs-12">
+								<section class="form-group">
+									<label class="control-label">Usuario</label>
+									<input type="text" class="form-control">
+								</section>
+							</section>
+							<section class="col-xs-12">
+								<section class="form-group">
+									<label class="control-label">Contraseña</label>
+									<input type="password" class="form-control">
+								</section>
+							</section>
+							<section class="col-xs-12">
+								<section class="form-group">							
+									<input type="submit" class="btn btn-primary btn-block" Value="Acceder">
+								</section>
+							</section>
+							<section class="col-xs-12">
+								<section class="form-group">							
+									<a href="/usuario/nuevo">
+										<img class="img-pequena" src="{% static "img/+userforms.png" %}">
+									</a>
+								</section>
+							</section>
+						</form>
+					</section>
+				</section>
+			</section>
+		</section>
+	</section>	
+{% endblock %}

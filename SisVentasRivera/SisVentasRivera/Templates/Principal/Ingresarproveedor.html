@@ -1,0 +1,118 @@
+{% extends 'sinstilopropio.html' %}
+{% load staticfiles %}
+{% block title %}Panel de Administración{% endblock %} 	
+{% block head %}{% endblock %}
+{% block body %}
+<div id="wrapper">
+		<div class="shell">
+			<div class="container">
+				<header class="header">
+					<h1 id="logo" style="width:40px;"><a href="/panel/admin"></a></h1>
+					<nav id="navigation">
+						<ul>
+							<li class="active"><a href="/panel/admin">Principal</a></li>
+							<li><a href="#">Operaciones<span></span></a>
+								<ul>
+									<li><a href="#">Pago personal</a></li>
+									<li><a href="/registro/venta">Realizar venta</a></li>
+									<li><a style="color: #3995d6"href="/proveedor/agregar">+ Proveedor</a></li>									
+								</ul>
+							</li>	
+							<li>
+								<a href="#">Productos<span></span></a>
+								<ul>
+									<li><a href="/productos/ver">Listar</a></li>
+									<li><a href="/productos/agregar">Agregar</a></li>
+									<li><a href="#">Modificar</a></li>
+									<li><a href="#">Eliminar</a></li>
+									<li><a href="#">Gráficas</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Reportes<span></span></a>
+								<ul>
+									<li><a href="#">Ventas</a></li>
+									<li><a href="#">Compras</a></li>
+									<li><a href="#">Personal</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Usuarios<span></span></a>
+								<ul>
+									<li><a href="#">Crear</a></li>
+									<li><a href="#">Listar</a></li>
+									<li><a href="#">Modificar</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Configuraciones<span></span></a>
+								<ul>
+									<li><a href="#">Privilegios</a></li>
+									<li><a href="#">Servicios</a></li>
+									<li><a href="#">De baja</a></li>
+									<li><a href="#">Estadísticas</a></li>
+									<li><a href="/">Salir</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+					<div class="cl">&nbsp;</div>
+				</header>
+				<!-- end of header -->
+				<div class="main">
+					<!-- box -->
+					<section class="box">
+						<span class="shadow-t"></span>
+						<span style="font-size:30px;color:#444;font-weight: bold;">Agregar proveedor</span>
+						<!--<a href="#" class="alignright"> + Explore Showcase</a>-->
+						<div class="cl">&nbsp;</div>
+						<!-- entries -->
+						<div class="entries">
+							<div class="entrye">
+							<form method="POST"> 	
+							{% csrf_token %}
+							{{formulario2.as_p}}
+							<input class="enviarprod" type="submit" value="Guardar">
+						</form>
+							</div>    
+						</div>	
+					<!-- end of entries -->
+					</section>
+					<!-- end of box -->
+					
+					<!-- services -->
+					<section class="services">
+						<div class="widget">
+							<h3>Librería Rivera, <span style="font-size:15px;">tu libreria favorita.</span></h3>
+							<p style="text-align:justify">Este sistema te facilita tu vida laboral, ofreciendote una interfaz amigable y capaz de ser entendida por el personal al que se capacite. Ten en cuenta que las tecnología te ayuda a optimizar tu desempeño en el trabajo.</p>
+						</div>
+						<div class="widget contact-widget">
+							<h3>Contactos</h3>
+							<ul>
+								<li>Av. Sanchez Cerro s/n</li>
+								<li><strong>Telefonos: </strong>073-235634</li>
+								<li><strong>Correo: </strong>riverastore@libreria.com</li>
+							</ul>
+						</div>
+						<div class="widget socials-widget">
+							<h3>Sociedad</h3>
+							<p>Redes sociales y más.</p>
+							<a href="#" class="facebook-ico">facebook</a>
+							<a href="#" class="twitter-ico">twitter</a>
+							<a href="#" class="rss-ico">rss</a>
+							<a href="#" class="in-ico">in</a>
+							<a href="#" class="skype-ico">skype</a>
+							<a href="#" class="google-ico">google</a>
+						</div>
+						<div class="cl">&nbsp;</div>
+					</section>
+					<!-- end of services -->
+				</div>
+				<!-- end of main -->
+			</div>
+			<!-- end of container -->
+		</div>
+		<!-- end of shell -->
+	</div>
+	<!-- end of wrappert -->
+{% endblock %}

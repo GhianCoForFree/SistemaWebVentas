@@ -1,0 +1,188 @@
+{% extends 'sinstilopropio.html' %}
+{% load staticfiles %}
+{% block title %}Panel de Administración{% endblock %} 	
+{% block head %}{% endblock %}
+{% block body %}
+<div id="wrapper">
+		<div class="shell">
+			<div class="container">
+				<header class="header">
+					<h1 id="logo" style="width:40px;"><a href="/panel/admin"></a></h1>
+					<nav id="navigation">
+						<ul>
+							<li class="active"><a href="/panel/admin">Principal</a></li>
+							<li><a href="#">Operaciones<span></span></a>
+								<ul>
+									<li><a href="#">Pago personal</a></li>
+									<li><a style="color: #3995d6" href="/registro/venta">Realizar venta</a></li>
+									<li><a href="/proveedor/agregar">+ Proveedor</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="#">Productos<span></span></a>
+								<ul>
+									<li><a href="/productos/ver">Listar</a></li>
+									<li><a href="/productos/agregar">Agregar</a></li>
+									<li><a href="#">Modificar</a></li>
+									<li><a href="#">Eliminar</a></li>
+									<li><a href="#">Gráficas</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Reportes<span></span></a>
+								<ul>
+									<li><a href="#">Ventas</a></li>
+									<li><a href="#">Compras</a></li>
+									<li><a href="#">Personal</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Usuarios<span></span></a>
+								<ul>
+									<li><a href="#">Crear</a></li>
+									<li><a href="#">Listar</a></li>
+									<li><a href="#">Modificar</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Configuraciones<span></span></a>
+								<ul>
+									<li><a href="#">Privilegios</a></li>
+									<li><a href="#">Servicios</a></li>
+									<li><a href="#">De baja</a></li>
+									<li><a href="#">Estadísticas</a></li>
+									<li><a href="/">Salir</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+					<div class="cl">&nbsp;</div>
+				</header>
+				<!-- end of header -->
+				<div class="main">
+					<!-- box -->
+					<section class="box">
+						<span class="shadow-t"></span>
+						<span style="font-size:30px;color:#444;font-weight: bold;">Regitro de ventas</span>
+						<a href="/registro/cliente" class="alignright">Nuevo cliente</a>
+						<div class="cl">&nbsp;</div>
+						<!-- entries -->
+						<div class="entries">
+							<div class="entrye">
+						<form method="POST">
+							<p class="datoscomprobante">Datos personales del cliente</p><br>
+							<section class="personal_cliente">
+								<label class="ruc" for="name">RUC:</label>
+    							<input type="text" size="15" maxlength="11" />
+								<label class="ruc" for="name">Nombres:</label>
+    							<td><input type="text" size="20" /></td>
+								<label class="ruc" for="name">Apellidos:</label>    						
+    							<td><input type="text" size="20" /></td>
+    							<a href="#ventana"><input type="button" name="cliente" value="Buscar cliente"/></a>
+							</section> 	<br>
+							<p class="datoscomprobante">Factura y venta</p>							
+							<br>
+							<section class="personal_cliente"><br>	
+								<label for="name">N° Factura:</label>
+								<label for="name">20</label><br><br>
+								<label for="name">Fecha:</label>   
+								<label for="name">20 - 08 - 2014</label><br><br>
+								<label for="name">Vendedor:</label>       								
+								<label for="name">Juan Perez Sosa</label><br>			
+							</section>
+							<table summary="Summary Here" cellpadding="0" cellspacing="0">
+							        <thead>
+							          <tr>
+							            <th>Cantidad</th>
+							            <th>Descripción</th>
+							            <th>Precio Unit.</th>
+							            <th>TOTAL</th>
+							          </tr>
+							        </thead>							      	
+							        <tbody>
+							         	<tr class="light"></tr>
+							        </tbody>
+							    </table>							
+							<section class="footerfactura">	
+					            <label for="pago">Subtotal:</label>
+							   	<input class="datel1" type="text" name="subtotal" placeholder="0.00" size="8"/><br>
+							 	<label for="pago">IGV:</label>
+							 	<input class="datel2" type="text" name="totalpagar" placeholder="18%" size="8"/><br>
+							    <label for="pago">Total a pagar:</label>
+							    <input class="datel3" type="text" name="totalpagar" placeholder="0.00" size="8"/>	
+    						</section>
+							<input class="enviarprod" type="submit" value="Registrar">
+							<input class="enviarprod" type="button" value="Eliminar">								
+						</form>							
+							</div>    
+						</div>	
+					<!-- end of entries -->
+					</section>
+					<!-- end of box -->
+					
+					<!-- services -->
+					<section class="services">
+						<div class="widget">
+							<h3>Librería Rivera, <span style="font-size:15px;">tu libreria favorita.</span></h3>
+							<p style="text-align:justify">Este sistema te facilita tu vida laboral, ofreciendote una interfaz amigable y capaz de ser entendida por el personal al que se capacite. Ten en cuenta que las tecnología te ayuda a optimizar tu desempeño en el trabajo.</p>
+						</div>
+						<div class="widget contact-widget">
+							<h3>Contactos</h3>
+							<ul>	
+								<li>Av. Sanchez Cerro s/n</li>
+								<li><strong>Telefonos: </strong>073-235634</li>
+								<li><strong>Correo: </strong>riverastore@libreria.com</li>
+							</ul>
+						</div>
+						<div class="widget socials-widget">
+							<h3>Sociedad</h3>
+							<p>Redes sociales y más.</p>
+							<a href="#" class="facebook-ico">facebook</a>
+							<a href="#" class="twitter-ico">twitter</a>
+							<a href="#" class="rss-ico">rss</a>
+							<a href="#" class="in-ico">in</a>
+							<a href="#" class="skype-ico">skype</a>
+							<a href="#" class="google-ico">google</a>
+						</div>
+						<div class="cl">&nbsp;</div>
+					</section>
+					<!-- end of services -->
+				</div>
+				<!-- end of main -->
+			</div>
+			<!-- end of container -->
+		</div>
+		<!-- end of shell -->
+	</div>
+	<!-- end of wrappert -->
+	<section id="ventana">
+		<section id="contenedor">
+			<a href="#closed"></a>
+			<h2>Clientes</h2>
+			<p>A continuación le aparerece una lista de clientes, elija uno para realizar la venta</p>
+			<a href="#closed"><img style="width: 25px;height: 25px;" src="{% static "img/x.ico" %}"></a>
+			<table summary="Summary Here" cellpadding="0" cellspacing="0">
+			    <thead>
+			        <tr>
+			            <th>Nombre</th>
+			            <th>Apellidos</th>
+			            <th>RUC</th>
+			        	<th>Opción</th>
+				    </tr>
+				</thead>							      	
+				<tbody>
+					{% for clie in cliente %}
+					<tr class="light">
+						<td>{{clie.Nombre}}</td>
+						<td>{{clie.Apellidos}}</td>
+						<td>{{clie.RUC}}</td>
+						<td><input id="optiom" type="radio" name="option"></td>
+	  	         	</tr>
+	  	         	{% endfor %}
+		        </tbody>
+			</table>
+			<input class="enviarprod" type="button" value="Elegir" onclick="elegircliente()">								
+
+		</section>
+	</section>
+{% endblock %}

@@ -1,0 +1,64 @@
+img{
+	height: 200px;
+	width: 200px;
+}
+.contenedoradmin{
+	background: #cac;
+	border-radius: 25px;
+	box-shadow: 0px 0px 0px 10px rgba(0,0,0,.2);
+	height: 500px;
+	margin-top: 75px;
+	width: 100%;
+}
+.img-pequena{
+	cursor: pointer;
+	height: 50px;
+	width: 50px;	
+}
+#formu{
+	margin: 0 auto;
+}
+#id_username{
+
+}
+#titulo_cabecera{
+	color: #fff;
+	font-size: 5em;
+	font-weight: bold;
+	text-align:right;
+	text-shadow:0px 0px 50px rgba(150,250,254,.9);
+}
+.btn{
+	font-size: 2em;
+	font-weight: bold;
+}
+.control-label{
+	color: #555;
+	font-size: 2em;
+}
+.form-control{
+	font-size: 1.5em;
+	text-align: center;
+}
+.form-control:hover{
+	color: white;
+	background: #aaa;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+.formulario{
+	background: #ddd;
+	border-radius: 50px;
+	height: 350px;
+	margin: 0 auto;
+	margin-top: 100px;
+	box-shadow: 0px 0px 10px 25px rgba(0,0,0,.5);
+	width: 60%;
+}
+.h22{
+	font-weight: bold;
+}
+.table{
+	-webkit-transform: translate(250px,0px);
+}

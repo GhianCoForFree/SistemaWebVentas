@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Acceso al sistema</title>
+        <link rel="stylesheet" type="text/css" href="{% static "css/styleindex.css"%}"/>
+        <script src="js/modernizr.custom.63321.js"></script>
+        <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+		</style>
+    </head>
+    <body>
+        <div class="container">			
+			<header>			
+				<h1 style="font-size: 60px;text-shadow: 0px 0px 25px rgba(20,22,200,.3)"><br><strong>Librería Rivera</h1><br> </strong><h4 style="-webkit-transform:translate(-120px,-10px);font-size: 20px	;">tu librería favorita</h4>
+			</header>			
+			<section class="main">
+				<form class="form-2" method="POST" action="/panel/admin">{% csrf_token %}
+					<h1><span class="log-in">Acceso</span></h1>
+					<p class="float">
+						<label for="login"><i class="icon-user"></i>Usuario</label>
+						<input type="text" name="username" placeholder="Ingresa tu cuenta">
+					</p>
+					<p class="float">
+						<label for="password"><i class="icon-lock"></i>Contraseña:</label>
+						<input type="password" name="password" placeholder="Contraseña" class="showpassword">
+					</p>
+					<p class="clearfix"> 
+						<a href="#" class="log-twitter">Ingresar</a>    
+						<input type="submit" name="submit" value="">
+					</p>
+				</form>​​
+			</section>			
+        </div>		
+    </body>
+</html>
