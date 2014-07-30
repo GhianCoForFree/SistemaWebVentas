@@ -16,6 +16,12 @@
 	{% endblock %}
 	<script type="text/javascript" src="{% static "js/jquery.js"%}"></script>
 	<script type="text/javascript">
+		$(function(){
+			$(".publicar").on('click',mostrarForm);
+			function mostrarForm(){ 
+				$(".comentario").slideToggle();
+			}
+		});
 	</script>
 </body>
 </html>

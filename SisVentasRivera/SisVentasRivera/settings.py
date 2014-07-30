@@ -27,13 +27,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'SisVentasRivera.Apps.ventas',
-    'registration',
 )
-
-from django.core.urlresolvers import reverse_lazy
-LOGIN_URL = reverse_lazy('panel_admin')
-LOGIN_REDIRECT_URL = reverse_lazy('panel_admin')
-LOGIN_URL = reverse_lazy('salir')
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

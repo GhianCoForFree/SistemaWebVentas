@@ -14,7 +14,8 @@
 								<ul>
 									<li><a href="#">Pago personal</a></li>
 									<li><a href="/registro/venta">Realizar venta</a></li>
-									<li><a href="/proveedor/agregar">+ Proveedor</a></li>									
+									<li><a href="/proveedor/agregar">+ Proveedor</a></li>		
+									<li><a class="publicar" href="#">+ Postear</a></li>							
 								</ul>
 							</li>
 							<li>
@@ -58,6 +59,14 @@
 					<div class="cl">&nbsp;</div>
 				</header>
 				<!-- end of header -->
+				<section class="comentario">
+					<form action="" method="POST">
+					<h1>Agrega tu comentario</h1>
+						{% csrf_token %}
+						{{ formulario4.as_p }}
+						<input class="btncoment" value="Publicar" type="submit">
+					</form>
+				</section>
 				<div class="main">
 					<!-- cols -->
 					<section class="cols">

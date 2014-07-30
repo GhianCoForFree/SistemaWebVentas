@@ -14,3 +14,7 @@ class ProveedorNuevo(ModelForm):
 class ClienteNuevo(ModelForm):
 	class Meta:
 		model = Cliente
+
+class Comentario(ModelForm):
+	class Meta:
+		model = Comentarios

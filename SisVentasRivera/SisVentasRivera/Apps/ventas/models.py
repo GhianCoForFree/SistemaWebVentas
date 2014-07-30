@@ -77,13 +77,19 @@ class Usuario(models.Model):
 	Telefono = models.CharField(max_length=6)
 	Celular = models.CharField(max_length=9)
 	E_mail = models.CharField(max_length=150)	
-	Usuario = models.CharField(max_length=20)
+	Usuario = models.ForeignKey(User, unique=True)
 	Contra = models.CharField(max_length=8)
 	Estado = models.BooleanField(default=True)
 	Cargo = models.ForeignKey(Cargo_Emp)	
 
 	def __unicode__(self):
-		return self.Usuario
+		return unicode(self.Usuario) 	
+		
+class Tipo_Cliente(models.Model):
+	Descripcion = models.CharField(max_length=150)
+
+	def __unicode__(self):
+		return self.Descripcion
 
 class Cliente(models.Model):	
 	Nombre = models.CharField(max_length=150)
@@ -91,7 +97,7 @@ class Cliente(models.Model):
 	Razon_social = models.CharField(max_length=200)
 	Direccion_legal=models.CharField(max_length=150, default='Piura')
 	Direccion_entrega=models.CharField(max_length=150)
-	Tipo = models.CharField(max_length=100)
+	Tipo = models.ForeignKey(Tipo_Cliente)
 	DNI = models.CharField(max_length=8)
 	RUC = models.CharField(max_length=11)
 	Telefono = models.CharField(max_length=9)

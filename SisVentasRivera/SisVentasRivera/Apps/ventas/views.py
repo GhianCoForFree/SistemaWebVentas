@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.core.urlresolvers import reverse
+from django.contrib.auth import login, logout, authenticate
 from models import *
 from forms import *
 
@@ -31,7 +32,7 @@ def ProveedorNew(request):
 	return render_to_response(template,context_instance=RequestContext(request,locals()))
 
 def Registroventas(request):
-	clientes = Cliente.objects.all()
+	clientes = Cliente.objects.all()	
 	template = 'Principal/registroventa.html'
 	return render_to_response(template,{'cliente':clientes}, context_instance=RequestContext(request))	
 
@@ -50,9 +51,15 @@ def Logeo(request):
 	return render_to_response('Principal/index.html',context_instance=RequestContext(request))
 
 def PanelAdmin(request):
-	comentarios = Comentarios.objects.all()
+	comentarios = Comentarios.objects.all().order_by("-timestamp")
+	if request.method == "POST":
+		formulario4 = Comentario(request.POST)
+		if formulario4.is_valid():
+			formulario4.save()
+			return HttpResponseRedirect('/panel/admin')
+	else:
+		formulario4 = Comentario()
 	paginator = Paginator(comentarios,15)
-
 	try: pagina = int(request.GET.get("page",'1'))
 	
 	except ValueError: pagina = 1
@@ -62,7 +69,7 @@ def PanelAdmin(request):
 	
 	except (InvalidPage,EmptyPage):
 		produc = paginator.page(paginator.num_pages)
-	return render_to_response('Principal/panelAdministrador.html',{'comenta':comentarios},context_instance=RequestContext(request))
+	return render_to_response('Principal/panelAdministrador.html',{'comenta':comentarios},context_instance=RequestContext(request,locals()))
 
 def PanelCajero(request):
 	return render_to_response('Principal/panelCajero.html',context_instance=RequestContext(request))
@@ -95,7 +102,7 @@ def listar_productos(request):
 ##		formulario = UserCreationForm(request.POST)
 ##		if formulario.is_valid:
 ##			formulario.save()
-##			return HttpRespondeRedirect('/')
+##			return HttpResponseRedirect('/')
 ##	else:
 ##		formulario = UserCreationForm()
 ##	return render_to_response('Principal/crearusuario.html',{'formulario':formulario},context_instance=RequestContext(request))		
@@ -110,7 +117,7 @@ def listar_productos(request):
 ##			if acceso is not None:
 ##				if acceso.is_active:
 ##					login(request, acceso)
-##					return HttpRespondeRedirect('/privado')
+##					return HttpResponseRedirect('/privado')
 ##				else:
 ##					return render_to_response('noactivo.html',context_instance=RequestContext(request))
 ##			else:

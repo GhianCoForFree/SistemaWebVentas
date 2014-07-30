@@ -10,3 +10,5 @@ admin.site.register(Cargo_Emp)
 admin.site.register(Cliente)
 admin.site.register(Factura_cabecera)
 admin.site.register(Comentarios)
+admin.site.register(Tipo_Cliente)
+

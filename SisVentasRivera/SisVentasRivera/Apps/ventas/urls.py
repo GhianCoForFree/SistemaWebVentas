@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('SisVentasRivera.Apps.ventas.views',
-	url(r'^$', 'Logeo', name='vista_login'),    
+	url(r'^$', 'Logeo', name='vista_login'),       
    #url(r'^usuario/nuevo$','crear_usuario', name='crear_usuario'),	
     url(r'^panel/admin$','PanelAdmin', name='panel_admin'),	
     url(r'^panel/cajero$', 'PanelCajero', name='panel_cajero'),	
